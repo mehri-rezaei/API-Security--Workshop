@@ -1,0 +1,89 @@
++--------+-----------+----------------------------------------+------------------------------------+-------------------------------------------------------------+----------------------------------+
+| Domain | Method    | URI                                    | Name                               | Action                                                      | Middleware                       |
++--------+-----------+----------------------------------------+------------------------------------+-------------------------------------------------------------+----------------------------------+
+|        | GET|HEAD  | api/documentation                      | l5-swagger.default.api             | L5Swagger\Http\Controllers\SwaggerController@api            | L5Swagger\Http\Middleware\Config |
+|        | GET|HEAD  | api/oauth2-callback                    | l5-swagger.default.oauth2_callback | L5Swagger\Http\Controllers\SwaggerController@oauth2Callback | L5Swagger\Http\Middleware\Config |
+|        | GET|HEAD  | api/v1.1/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@getallapikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v1.1/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@createApikeyv1       | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v1.1/apikey/{id}                   |                                    | App\Http\Controllers\ّApiKeyController@getApikey            | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT       | api/v1.1/apikey/{id}/refresh           |                                    | App\Http\Controllers\ّApiKeyController@rfereshApikey        | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | DELETE    | api/v1.1/apikey/{id}/revoke            |                                    | App\Http\Controllers\ّApiKeyController@revokeApikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v1.3/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@createApikeyv3       | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v1.3/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@getallapikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v1.3/apikey/{id}                   |                                    | App\Http\Controllers\ّApiKeyController@getApikey            | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT       | api/v1.3/apikey/{id}/refresh           |                                    | App\Http\Controllers\ّApiKeyController@rfereshApikey        | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | DELETE    | api/v1.3/apikey/{id}/revoke            |                                    | App\Http\Controllers\ّApiKeyController@revokeApikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v1.4/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@createApikeyv4       | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v1.4/apikey                        |                                    | App\Http\Controllers\ّApiKeyController@getallapikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v1.4/apikey/{id}                   |                                    | App\Http\Controllers\ّApiKeyController@getApikey            | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT       | api/v1.4/apikey/{id}/refresh           |                                    | App\Http\Controllers\ّApiKeyController@rfereshApikey        | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | DELETE    | api/v1.4/apikey/{id}/revoke            |                                    | App\Http\Controllers\ّApiKeyController@revokeApikey         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3.1/logo/user/file                |                                    | App\Http\Controllers\FController@logouploadv1               | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3.1/logo/user/file/{file_id}      |                                    | App\Http\Controllers\FController@getfile1                   | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3.2/logo/user/file                |                                    | App\Http\Controllers\FController@getfile2                   | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3.2/logo/user/file                |                                    | App\Http\Controllers\FController@logouploadv2               | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3.3/logo/user/file                |                                    | App\Http\Controllers\FController@logouploadv3               | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3.3/logo/user/file                |                                    | App\Http\Controllers\FController@getfile3                   | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3/changepassword                  |                                    | App\Http\Controllers\PasswordController@changepassword      | web                              |
+|        | GET|HEAD  | api/v3/channels                        | channels.index                     | App\Http\Controllers\ChannelController@index                | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3/channels                        | channels.store                     | App\Http\Controllers\ChannelController@store                | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3/channels/{channel}              | channels.show                      | App\Http\Controllers\ChannelController@show                 | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT|PATCH | api/v3/channels/{channel}              | channels.update                    | App\Http\Controllers\ChannelController@update               | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | DELETE    | api/v3/channels/{channel}              | channels.destroy                   | App\Http\Controllers\ChannelController@destroy              | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT       | api/v3/channels/{channel}/subscribes   |                                    | App\Http\Controllers\ChannelController@subscribes           | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT       | api/v3/channels/{channel}/unsubscribes |                                    | App\Http\Controllers\ChannelController@unsubscribes         | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3/channels/{channel}/videos       | videos.index                       | App\Http\Controllers\VideoController@index                  | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3/channels/{channel}/videos       | videos.store                       | App\Http\Controllers\VideoController@store                  | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3/forgotpassword                  |                                    | App\Http\Controllers\PasswordController@forgotpassword      | web                              |
+|        | POST      | api/v3/test/register                   |                                    | App\Http\Controllers\AuthController@register                | web                              |
+|        | POST      | api/v3/user/info2                      |                                    | App\Http\Controllers\AuthController@testphone               | web                              |
+|        | POST      | api/v3/user/login                      |                                    | App\Http\Controllers\AuthController@login                   | web                              |
+|        | POST      | api/v3/user/logout                     |                                    | App\Http\Controllers\AuthController@logout                  | web                              |
+|        | GET|HEAD  | api/v3/user/profile                    |                                    | App\Http\Controllers\ProfileController@getuser              | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PATCH     | api/v3/user/profile                    |                                    | App\Http\Controllers\ProfileController@edit                 | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3/user/profile/channels           |                                    | App\Http\Controllers\ProfileController@getchannel           | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | POST      | api/v3/verify                          |                                    | App\Http\Controllers\PasswordController@verify              | web                              |
+|        | DELETE    | api/v3/videos/{video}                  | videos.destroy                     | App\Http\Controllers\VideoController@destroy                | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | PUT|PATCH | api/v3/videos/{video}                  | videos.update                      | App\Http\Controllers\VideoController@update                 | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v3/videos/{video}                  | videos.show                        | App\Http\Controllers\VideoController@show                   | web                              |
+|        |           |                                        |                                    |                                                             | jwt.verify                       |
+|        | GET|HEAD  | api/v4/videos/{video}/trailer          |                                    | App\Http\Controllers\FController@getfile1                   | web                              |
+|        | POST      | api/v4/videos/{video}/trailer          |                                    | App\Http\Controllers\FController@traileruploadv1            | web                              |
+|        | GET|HEAD  | docs/asset/{asset}                     | l5-swagger.default.asset           | L5Swagger\Http\Controllers\SwaggerAssetController@index     | L5Swagger\Http\Middleware\Config |
+|        | GET|HEAD  | docs/{jsonFile?}                       | l5-swagger.default.docs            | L5Swagger\Http\Controllers\SwaggerController@docs           | L5Swagger\Http\Middleware\Config |
++--------+-----------+----------------------------------------+------------------------------------+-------------------------------------------------------------+----------------------------------+
