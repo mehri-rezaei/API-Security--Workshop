@@ -1,9 +1,9 @@
-Vulnerable PHP application based on OWASP API Top 10
+Insecure PHP application 
 
 It can be used for learning purpose. 
 
 
-**Vulnerabilities**:
+**Vulnerabilities based on OWASP API Top 10**:
 
 * Broken Object Level Authentication 
 * Insecure File Upload 
