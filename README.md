@@ -1,7 +1,5 @@
 Insecure PHP application 
 
-It can be used for learning purpose. 
-
 
 **Vulnerabilities based on OWASP API Top 10**:
 
